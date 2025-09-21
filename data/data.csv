@@ -2881,7 +2881,7 @@ CVE-2019-7254,7.5,0.85158,Linear eMerge E3-Series devices allow File Inclusion.,
 CVE-2019-7255,6.1,0.57323,Linear eMerge E3-Series devices allow XSS.,2019-07-02 19:15:11.087,Nuclei
 CVE-2019-7256,9.8,0.94406,Linear eMerge E3-Series devices allow Command Injections.,2019-07-02 19:15:11.147,CISA/Metasploit/Nuclei
 CVE-2019-7275,6.1,0.57113,Optergy Proton/Enterprise devices allow Open Redirect.,2019-07-01 20:15:11.917,Nuclei
-CVE-2019-7276,0.0,0.86557,Optergy Proton/Enterprise devices allow Remote Root Code Execution via a Backdoor Console.,2019-07-01 20:15:12.007,Metasploit
+CVE-2019-7276,0.0,0.86557,Optergy Proton/Enterprise devices allow Remote Root Code Execution via a Backdoor Console.,2019-07-01 20:15:12.007,Metasploit/Nuclei
 CVE-2019-7286,7.8,0.01377,"A memory corruption issue was addressed with improved input validation. This issue is fixed in iOS 12.1.4, macOS Mojave 10.14.3 Supplemental Update. An application may be able to gain elevated privileges.",2019-12-18 18:15:22.067,CISA
 CVE-2019-7287,7.8,0.03112,A memory corruption issue was addressed with improved input validation. This issue is fixed in iOS 12.1.4. An application may be able to execute arbitrary code with kernel privileges.,2019-12-18 18:15:22.130,CISA
 CVE-2019-7315,0.0,0.52927,"Genie Access WIP3BVAF WISH IP 3MP IR Auto Focus Bullet Camera devices through 3.x are vulnerable to directory traversal via the web interface, as demonstrated by reading /etc/shadow. NOTE: this product is discontinued, and its final firmware version has this vulnerability (4.x versions exist only for other Genie Access products).",2019-06-17 19:15:11.720,Nuclei
