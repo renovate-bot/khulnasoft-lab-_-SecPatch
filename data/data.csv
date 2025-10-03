@@ -6917,7 +6917,7 @@ management functionality. Attackers can exploit this issue by
 manipulating the endpoint to overwrite any user's password within the 
 system. This grants them unauthorized administrative access to protected
  areas of the application, compromising the device's system security.",2025-02-07 00:15:27.017,Nuclei
-CVE-2025-0868,0.0,0.16047,"A vulnerability, that could result in Remote Code Execution (RCE), has been found in DocsGPT. Due to improper parsing of JSON data using eval() an unauthorized attacker could send arbitrary Python code to be executed via /api/remote endpoint.
+CVE-2025-0868,0.0,0.16047,"A vulnerability, that could result in Remote Code Execution (RCE), has been found in DocsGPT. Due to improper parsing of JSON data using eval() an unauthorized attacker could send arbitrary Python code to be executed via /api/remote endpoint..
 
 This issue affects DocsGPT: from 0.8.1 through 0.12.0.",2025-02-20 12:15:10.893,Nuclei
 CVE-2025-0994,8.8,0.79002,Trimble Cityworks versions prior to 15.8.9 and Cityworks with office companion versions prior to 23.10 are vulnerable to a deserialization vulnerability. This could allow an authenticated user to perform a remote code execution attack against a customer’s Microsoft Internet Information Services (IIS) web server.,2025-02-06 16:15:41.493,CISA
