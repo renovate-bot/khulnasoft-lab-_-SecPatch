@@ -7806,7 +7806,7 @@ CVE-2025-58751,5.3,0.01777,"Vite is a frontend tooling framework for JavaScript.
 CVE-2025-59049,7.5,0.05977,"Mockoon provides way to design and run mock APIs. Prior to version 9.2.0, a mock API configuration for static file serving follows the same approach presented in the documentation page, where the server filename is generated via templating features from user input is vulnerable to Path Traversal and LFI, allowing an attacker to get any file in the mock server filesystem.
 The issue may be particularly relevant in cloud hosted server instances. Version 9.2.0 fixes the issue.",2025-09-10 19:15:42.500,Nuclei
 CVE-2025-59230,7.8,0.01094,Improper access control in Windows Remote Access Connection Manager allows an authorized attacker to elevate privileges locally.,2025-10-14 17:16:04.173,CISA
-CVE-2025-59287,9.8,0.11251,Deserialization of untrusted data in Windows Server Update Service allows an unauthorized attacker to execute code over a network.,2025-10-14 17:16:11.670,CISA/Nuclei
+CVE-2025-59287,9.8,0.11251,Deserialization of untrusted data in Windows Server Update Service allows an unauthorized attacker to execute code over a network.,2025-10-14 17:16:11.670,CISA/Metasploit/Nuclei
 CVE-2025-5946,7.2,0.23428,"Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in Centreon Infra Monitoring (Poller reload setup in the configuration modules) allows OS Command Injection.
 On the poller parameters page, a user with high privilege is able to concatenate custom instructions into the poller reload command.
 
