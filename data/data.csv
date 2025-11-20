@@ -4799,6 +4799,7 @@ CVE-2022-29009,9.8,0.58247,Multiple SQL injection vulnerabilities via the userna
 CVE-2022-29013,9.8,0.92719,A command injection in the command parameter of Razer Sila Gaming Router v2.0.441_api-2.0.418 allows attackers to execute arbitrary commands via a crafted POST request.,2022-06-09 00:15:08.017,Nuclei
 CVE-2022-29014,7.5,0.3871,A local file inclusion vulnerability in Razer Sila Gaming Router v2.0.441_api-2.0.418 allows attackers to read arbitrary files.,2022-06-09 00:15:08.063,Nuclei
 CVE-2022-29078,9.8,0.88261,"The ejs (aka Embedded JavaScript templates) package 3.1.6 for Node.js allows server-side template injection in settings[view options][outputFunctionName]. This is parsed as an internal option, and overwrites the outputFunctionName option with an arbitrary OS command (which is executed upon template compilation).",2022-04-25 15:15:49.887,Nuclei
+CVE-2022-29081,9.8,0.62885,"Zoho ManageEngine Access Manager Plus before 4302, Password Manager Pro before 12007, and PAM360 before 5401 are vulnerable to access-control bypass on a few Rest API URLs (for SSOutAction. SSLAction. LicenseMgr. GetProductDetails. GetDashboard. FetchEvents. and Synchronize) via the ../RestAPI substring.",2022-04-28 20:15:08.017,Nuclei
 CVE-2022-29153,7.5,0.8592,"HashiCorp Consul and Consul Enterprise up to 1.9.16, 1.10.9, and 1.11.4 may allow server side request forgery when the Consul client agent follows redirects returned by HTTP health check endpoints. Fixed in 1.9.17, 1.10.10, and 1.11.5.",2022-04-19 16:17:10.493,Nuclei
 CVE-2022-29272,6.1,0.10709,"In Nagios XI through 5.8.5, an open redirect vulnerability exists in the login function that could lead to spoofing.",2022-06-29 01:15:07.550,Nuclei
 CVE-2022-29298,7.5,0.73495,SolarView Compact ver.6.00 allows attackers to access sensitive files via directory traversal.,2022-05-12 16:15:07.510,Nuclei
@@ -7879,6 +7880,13 @@ CVE-2025-8876,8.8,0.27095,Improper Input Validation vulnerability in N-able N-ce
 CVE-2025-8943,9.8,0.06475,"The Custom MCPs feature is designed to execute OS commands, for instance, using tools like `npx` to spin up local MCP Servers. However, Flowise's inherent authentication and authorization model is minimal and lacks role-based access controls (RBAC). Furthermore, in Flowise versions before 3.0.1 the default installation operates without authentication unless explicitly configured. This combination allows unauthenticated network attackers to execute unsandboxed OS commands.",2025-08-14 10:15:29.637,Nuclei
 CVE-2025-9196,5.3,0.01486,"The Trinity Audio – Text to Speech AI audio player to convert content into audio plugin for WordPress is vulnerable to Sensitive Information Exposure in all versions up to, and including, 5.21.0 via the ~/admin/inc/phpinfo.php file that gets created on install. This makes it possible for unauthenticated attackers to extract sensitive data including configuration data.",2025-10-11 08:15:32.353,Nuclei
 CVE-2025-9242,9.8,0.73466,"An Out-of-bounds Write vulnerability in WatchGuard Fireware OS may allow a remote unauthenticated attacker to execute arbitrary code. This vulnerability affects both the Mobile User VPN with IKEv2 and the Branch Office VPN using IKEv2 when configured with a dynamic gateway peer.This vulnerability affects Fireware OS 11.10.2 up to and including 11.12.4_Update1, 12.0 up to and including 12.11.3 and 2025.1.",2025-09-17 08:15:33.960,CISA
+CVE-2025-9316,0.0,0.00055,"N-central < 2025.4 can generate sessionIDs for unauthenticated users
+
+
+
+
+
+This issue affects N-central: before 2025.4.",2025-11-12 16:15:37.623,Nuclei
 CVE-2025-9377,7.2,0.19969,"The authenticated remote command execution (RCE) vulnerability exists  in the Parental Control page on TP-Link Archer C7(EU) V2 and TL-WR841N/ND(MS) V9.
 
 This issue affects Archer C7(EU) V2: before 241108 and TL-WR841N/ND(MS) V9: before 241108.
