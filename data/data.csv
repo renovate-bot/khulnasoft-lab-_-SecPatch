@@ -3989,6 +3989,7 @@ CVE-2021-26702,6.1,0.04853,EPrints 3.4.2 exposes a reflected XSS opportunity in 
 CVE-2021-26710,6.1,0.21051,A cross-site scripting (XSS) issue in the login panel in Redwood Report2Web 4.3.4.5 and 4.5.3 allows remote attackers to inject JavaScript via the signIn.do urll parameter.,2021-02-05 14:15:18.840,Nuclei
 CVE-2021-26723,6.1,0.64083,Jenzabar 9.2.x through 9.2.2 allows /ics?tool=search&query= XSS.,2021-02-06 06:15:12.287,Nuclei
 CVE-2021-26812,6.1,0.19091,"Cross Site Scripting (XSS) in the Jitsi Meet 2.7 through 2.8.3 plugin for Moodle via the ""sessionpriv.php"" module. This allows attackers to craft a malicious URL, which when clicked on by users, can inject javascript code to be run by the application.",2021-04-14 14:15:13.413,Nuclei
+CVE-2021-26829,5.4,0.00252,OpenPLC ScadaBR through 0.9.1 on Linux and through 1.12.4 on Windows allows stored XSS via system_settings.shtm.,2021-06-11 12:15:12.053,CISA
 CVE-2021-26855,9.1,0.94358,Microsoft Exchange Server Remote Code Execution Vulnerability,2021-03-03 00:15:12.103,CISA/Nuclei
 CVE-2021-26857,7.8,0.34542,Microsoft Exchange Server Remote Code Execution Vulnerability,2021-03-03 00:15:12.167,CISA
 CVE-2021-26858,7.8,0.55064,Microsoft Exchange Server Remote Code Execution Vulnerability,2021-03-03 00:15:12.227,CISA
