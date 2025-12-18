@@ -7907,6 +7907,7 @@ CVE-2025-59049,7.5,0.06224,"Mockoon provides way to design and run mock APIs. Pr
 The issue may be particularly relevant in cloud hosted server instances. Version 9.2.0 fixes the issue.",2025-09-10 19:15:42.500,Nuclei
 CVE-2025-59230,7.8,0.0857,Improper access control in Windows Remote Access Connection Manager allows an authorized attacker to elevate privileges locally.,2025-10-14 17:16:04.173,CISA
 CVE-2025-59287,9.8,0.63859,Deserialization of untrusted data in Windows Server Update Service allows an unauthorized attacker to execute code over a network.,2025-10-14 17:16:11.670,CISA/Metasploit/Nuclei
+CVE-2025-59374,0.0,0.00044,"""UNSUPPORTED WHEN ASSIGNED"" Certain versions of the ASUS Live Update client were distributed with unauthorized modifications introduced through a supply chain compromise. The modified builds could cause devices meeting specific targeting conditions to perform unintended actions. Only devices that met these conditions and installed the compromised versions were affected. The Live Update client has already reached End-of-Support (EOS) in October 2021, and no currently supported devices or products are affected by this issue.",2025-12-17 05:16:13.080,CISA
 CVE-2025-5946,7.2,0.23524,"Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in Centreon Infra Monitoring (Poller reload setup in the configuration modules) allows OS Command Injection.
 On the poller parameters page, a user with high privilege is able to concatenate custom instructions into the poller reload command.
 
