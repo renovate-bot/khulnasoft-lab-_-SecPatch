@@ -2190,6 +2190,7 @@ CVE-2017-10075,0.0,0.8913,"Vulnerability in the Oracle WebCenter Content compone
 CVE-2017-10271,7.5,0.94439,"Vulnerability in the Oracle WebLogic Server component of Oracle Fusion Middleware (subcomponent: WLS Security). Supported versions that are affected are 10.3.6.0.0, 12.1.3.0.0, 12.2.1.1.0 and 12.2.1.2.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via T3 to compromise Oracle WebLogic Server. Successful attacks of this vulnerability can result in takeover of Oracle WebLogic Server. CVSS 3.0 Base Score 7.5 (Availability impacts). CVSS Vector: (CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H).",2017-10-19 17:29:01.747,CISA/Metasploit/Nuclei
 CVE-2017-1092,0.0,0.80359,"IBM Informix Open Admin Tool 11.5, 11.7, and 12.1 could allow an unauthorized user to execute arbitrary code as system admin on Windows servers. IBM X-Force ID: 120390.",2017-05-22 20:29:00.203,Metasploit
 CVE-2017-10974,0.0,0.91231,Yaws 1.91 allows Unauthenticated Remote File Disclosure via HTTP Directory Traversal with /%5C../ to port 8080. NOTE: this CVE is only about use of an initial /%5C sequence to defeat traversal protection mechanisms; the initial /%5C sequence was apparently not discussed in earlier research on this product.,2017-07-07 11:29:00.230,Nuclei
+CVE-2017-11107,6.1,0.00765,"phpLDAPadmin through 1.2.3 has XSS in htdocs/entry_chooser.php via the form, element, rdn, or container parameter.",2017-07-08 12:29:00.177,Nuclei
 CVE-2017-11165,0.0,0.92044,dataTaker DT80 dEX 1.50.012 allows remote attackers to obtain sensitive credential and configuration information via a direct request for the /services/getFile.cmd?userfile=config.xml URI.,2017-07-12 12:29:00.190,Nuclei
 CVE-2017-1129,0.0,0.68501,"IBM Notes 8.5 and 9.0 is vulnerable to a denial of service. If a user is persuaded to click on a malicious link, it could cause the Notes client to hang and have to be restarted. IBM X-Force ID: 121370.",2017-09-05 21:29:00.253,Metasploit
 CVE-2017-11292,8.8,0.21236,"Adobe Flash Player version 27.0.0.159 and earlier has a flawed bytecode verification procedure, which allows for an untrusted value to be used in the calculation of an array index. This can lead to type confusion, and successful exploitation could lead to arbitrary code execution.",2017-10-22 19:29:00.237,CISA
@@ -6657,7 +6658,7 @@ CVE-2024-28986,9.8,0.45695,"SolarWinds Web Help Desk was found to be susceptible
 
 While it was reported as an unauthenticated vulnerability, SolarWinds has been unable to reproduce it without authentication after thorough testing.  
 
-However, out of an abundance of caution, we recommend all Web Help Desk customers apply the patch, which is now available.",2024-08-13 23:15:16.627,CISA
+However, out of an abundance of caution, we recommend all Web Help Desk customers apply the patch, which is now available.",2024-08-13 23:15:16.627,CISA/Nuclei
 CVE-2024-28987,9.1,0.9429,"The SolarWinds Web Help Desk (WHD) software is affected by a hardcoded credential vulnerability, allowing remote unauthenticated user to access internal functionality and modify data.",2024-08-21 22:15:04.350,CISA/Metasploit/Nuclei
 CVE-2024-28995,8.6,0.94354,"
 
