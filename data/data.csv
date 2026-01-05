@@ -6719,6 +6719,9 @@ CVE-2024-30188,8.1,0.88243,"File read and write vulnerability in Apache DolphinS
 This issue affects Apache DolphinScheduler: from 3.1.0 before 3.2.2.
 
 Users are recommended to upgrade to version 3.2.2, which fixes the issue.",2024-08-12 13:38:19.727,Nuclei
+CVE-2024-30194,7.1,0.00244,"Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WP Sunshine Sunshine Photo Cart allows Reflected XSS.This issue affects Sunshine Photo Cart: from n/a through 3.1.1.
+
+",2024-03-27 07:15:55.217,Nuclei
 CVE-2024-30269,5.3,0.92096,"DataEase, an open source data visualization and analysis tool, has a database configuration information exposure vulnerability prior to version 2.5.0. Visiting the `/de2api/engine/getEngine;.js` path via a browser reveals that the platform's database configuration is returned. The vulnerability has been fixed in v2.5.0. No known workarounds are available aside from upgrading.",2024-04-08 15:15:07.820,Nuclei
 CVE-2024-3032,6.1,0.02477,"Themify Builder WordPress plugin before 7.5.8 does not validate a parameter before redirecting the user to its value, leading to an Open Redirect issue",2024-06-13 06:15:11.333,Nuclei
 CVE-2024-30568,9.8,0.90809,Netgear R6850 1.1.0.88 was discovered to contain a command injection vulnerability via the c4-IPAddr parameter.,2024-04-03 13:16:02.443,Nuclei
@@ -6972,6 +6975,7 @@ CVE-2024-43917,9.3,0.88274,Improper Neutralization of Special Elements used in a
 CVE-2024-43919,5.3,0.86139,"Access Control vulnerability in YARPP YARPP allows .
 
 This issue affects YARPP: from n/a through 5.30.10.",2024-11-01 15:15:48.450,Nuclei
+CVE-2024-43971,7.1,0.00299,Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in WP Sunshine Sunshine Photo Cart allows Reflected XSS.This issue affects Sunshine Photo Cart: from n/a through 3.2.5.,2024-09-18 00:15:06.937,Nuclei
 CVE-2024-4399,9.1,0.30057,"The  does not validate a parameter before making a request to it, which could allow unauthenticated users to perform SSRF attack",2024-05-23 06:15:11.577,Nuclei
 CVE-2024-44000,9.8,0.92779,Insufficiently Protected Credentials vulnerability in LiteSpeed Technologies LiteSpeed Cache allows Authentication Bypass.This issue affects LiteSpeed Cache: from n/a before 6.5.0.1.,2024-10-20 12:15:03.287,Metasploit/Nuclei
 CVE-2024-44308,8.8,0.00935,"The issue was addressed with improved checks. This issue is fixed in Safari 18.1.1, iOS 17.7.2 and iPadOS 17.7.2, macOS Sequoia 15.1.1, iOS 18.1.1 and iPadOS 18.1.1, visionOS 2.1.1. Processing maliciously crafted web content may lead to arbitrary code execution. Apple is aware of a report that this issue may have been actively exploited on Intel-based Mac systems.",2024-11-20 00:15:17.080,CISA
