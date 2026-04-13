@@ -7052,6 +7052,7 @@ However, malicious requests are blocked and rejected when any of the following i
 
   *  the  Spring Security HTTP Firewall https://docs.spring.io/spring-security/reference/servlet/exploits/firewall.html  is in use
   *  the application runs on Tomcat or Jetty",2024-09-13 06:15:11.190,Nuclei
+CVE-2024-38819,7.5,0.74498,Applications serving static resources through the functional web frameworks WebMvc.fn or WebFlux.fn are vulnerable to path traversal attacks. An attacker can craft malicious HTTP requests and obtain any file on the file system that is also accessible to the process in which the Spring application is running.,2024-12-19 18:15:10.557,Nuclei
 CVE-2024-38856,9.8,0.94375,"Incorrect Authorization vulnerability in Apache OFBiz.
 
 This issue affects Apache OFBiz: through 18.12.14.
@@ -7664,6 +7665,7 @@ This issue affects Junos OS: 
   *  23.2 versions before 23.2R2-S3, 
   *  23.4 versions before 23.4R2-S4,
   *  24.2 versions before 24.2R1-S2, 24.2R2.",2025-03-12 14:15:15.447,CISA
+CVE-2025-2221,7.5,0.00598,"The WPCOM Member plugin for WordPress is vulnerable to time-based SQL Injection via the ‘user_phone’ parameter in all versions up to, and including, 1.7.6 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.",2025-03-14 07:15:38.477,Nuclei
 CVE-2025-22214,4.3,0.00145,Landray EIS 2001 through 2006 allows Message/fi_message_receiver.aspx?replyid= SQL injection.,2025-01-02 04:15:06.277,Nuclei
 CVE-2025-22224,9.3,0.46062,"VMware ESXi, and Workstation contain a TOCTOU (Time-of-Check Time-of-Use) vulnerability that leads to an out-of-bounds write. A malicious actor with local administrative privileges on a virtual machine may exploit this issue to execute code as the virtual machine's VMX process running on the host.",2025-03-04 12:15:33.687,CISA
 CVE-2025-22225,8.2,0.09983,VMware ESXi contains an arbitrary write vulnerability. A malicious actor with privileges within the VMX process may trigger an arbitrary kernel write leading to an escape of the sandbox.,2025-03-04 12:15:33.840,CISA
