@@ -8726,4 +8726,4 @@ CVE-2026-6203,6.1,0.00759,"The User Registration & Membership plugin for WordPre
 CVE-2026-6973,7.2,0.04907,"An Improper Input Validation in Ivanti EPMM before versions 12.6.1.1, 12.7.0.1, and 12.8.0.1 allows a remotely authenticated user with administrative access to achieve remote code execution.",2026-05-07 16:16:23.163,CISA
 CVE-2026-9082,6.5,0.00017,"Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Drupal Drupal core allows SQL Injection.
 
-This issue affects Drupal core: from 8.9.0 before 10.4.10, from 10.5.0 before 10.5.10, from 10.6.0 before 10.6.9, from 11.0.0 before 11.1.10, from 11.2.0 before 11.2.12, from 11.3.0 before 11.3.10.",2026-05-20 20:16:41.230,Nuclei
+This issue affects Drupal core: from 8.9.0 before 10.4.10, from 10.5.0 before 10.5.10, from 10.6.0 before 10.6.9, from 11.0.0 before 11.1.10, from 11.2.0 before 11.2.12, from 11.3.0 before 11.3.10.",2026-05-20 20:16:41.230,CISA/Nuclei
