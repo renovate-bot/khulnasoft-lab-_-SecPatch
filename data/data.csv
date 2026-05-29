@@ -8615,7 +8615,7 @@ This issue affects Apache ActiveMQ Broker: before 5.19.4, from 6.0.0 before 6.2.
 
 
 
-Users are recommended to upgrade to version 5.19.4 or 6.2.3, which fixes the issue",2026-04-07 09:16:20.967,CISA/Nuclei
+Users are recommended to upgrade to version 5.19.4 or 6.2.3, which fixes the issue",2026-04-07 09:16:20.967,CISA/Metasploit/Nuclei
 CVE-2026-34453,7.5,0.04874,"SiYuan is a personal knowledge management system. Prior to version 3.6.2, the publish service exposes bookmarked blocks from password-protected documents to unauthenticated visitors. In publish/read-only mode, /api/bookmark/getBookmark filters bookmark results by calling FilterBlocksByPublishAccess(nil, ...). Because the filter treats a nil context as authorized, it skips the publish password check and returns bookmarked blocks from documents configured as Protected. As a result, anyone who can access the publish service can retrieve content from protected documents without providing the required password, as long as at least one block in the document is bookmarked. This issue has been patched in version 3.6.2.",2026-03-31 22:16:20.483,Nuclei
 CVE-2026-34486,7.5,0.0168,"Missing Encryption of Sensitive Data vulnerability in Apache Tomcat due to the fix for CVE-2026-29146 allowing the bypass of the EncryptInterceptor.
 
