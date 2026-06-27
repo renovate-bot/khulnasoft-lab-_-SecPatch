@@ -8503,7 +8503,7 @@ CVE-2026-1207,5.4,0.03779,"An issue was discovered in 6.0 before 6.0.2, 5.2 befo
 Raster lookups on ``RasterField`` (only implemented on PostGIS) allows remote attackers to inject SQL via the band index parameter.
 Earlier, unsupported Django series (such as 5.0.x, 4.1.x, and 3.2.x) were not evaluated and may also be affected.
 Django would like to thank Tarek Nakkouch for reporting this issue.",2026-02-03 15:16:13.433,Nuclei
-CVE-2026-12569,0.0,0.00931,"A critical remote code execution (RCE) vulnerability has been reported in PTC Windchill PDMlink and PTC FlexPLM. The vulnerability may be exploited through the deserialization of untrusted data.   *  This advisory also applies to all CPS versions
+CVE-2026-12569,9.8,0.00931,"A critical remote code execution (RCE) vulnerability has been reported in PTC Windchill PDMlink and PTC FlexPLM. The vulnerability may be exploited through the deserialization of untrusted data.   *  This advisory also applies to all CPS versions
   *  The identified vulnerability also impacts Windchill and FlexPLM releases prior to 11.0 M030",2026-06-18 01:18:12.040,CISA
 CVE-2026-1277,4.7,0.00592,"The URL Shortify plugin for WordPress is vulnerable to Open Redirect in all versions up to, and including, 1.12.1 due to insufficient validation on the 'redirect_to' parameter in the promotional dismissal handler. This makes it possible for unauthenticated attackers to redirect users to potentially malicious sites via a crafted link.",2026-02-18 05:16:24.960,Nuclei
 CVE-2026-1281,9.8,0.81231,A code injection in Ivanti Endpoint Manager Mobile allowing attackers to achieve unauthenticated remote code execution.,2026-01-29 22:15:53.140,CISA/Metasploit
