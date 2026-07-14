@@ -8913,6 +8913,11 @@ CVE-2026-48939,9.8,0.01505,"A vulnerability in the iCagenda extension for Joomla
 CVE-2026-49777,10.0,0.01656,"Improper Validation of Specified Quantity in Input vulnerability in ShapedPlugin, LLC Product Slider Pro for WooCommerce allows Malicious Software Implanted.
 
 This issue affects Product Slider Pro for WooCommerce: from n/a before 3.5.4.",2026-06-05 09:16:26.220,Nuclei
+CVE-2026-50229,6.1,0.00455,"Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) vulnerability in the number guess example for Apache Tomcat.
+
+This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.22, from 10.1.0-M1 through 10.1.55, from 9.0.0.M1 through 9.0.118, from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109. Other versions that have reached end of support may also be affected.
+
+Users are recommended to upgrade to version 11.0.23, 10.1.56 or 9.0.119, which fix the issue.",2026-06-29 21:16:44.413,Nuclei
 CVE-2026-50230,6.1,0.00324,Lyrion Music Server 9.2.0 contains an unauthenticated reflected cross-site scripting vulnerability in the server.log endpoint that allows attackers to inject arbitrary HTML and JavaScript code through the search parameter. Attackers can craft malicious URLs with JavaScript payloads in the search parameter to execute code in users' browsers within the context of the affected application.,2026-06-05 14:16:36.010,Nuclei
 CVE-2026-5027,8.8,0.31405,"The 'POST /api/v2/files' endpoint does not sanitize the 'filename' parameter from the multipart form data, allowing an attacker to write files to arbitrary locations on the filesystem using path traversal sequences ('../').",2026-03-27 15:17:04.743,Nuclei
 CVE-2026-5073,7.5,0.01383,"The ARMember Premium plugin for WordPress is vulnerable to SQL Injection via the 'order' parameter of the 'arm_directory_paging_action' AJAX action in all versions up to, and including, 7.3.1. This is due to insufficient escaping on the user-supplied 'order' and 'orderby' parameters and the lack of sufficient preparation on the existing SQL query in the `arm_get_directory_members()` function. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.",2026-06-02 20:16:40.467,Nuclei
