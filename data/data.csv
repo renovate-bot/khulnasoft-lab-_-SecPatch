@@ -7809,6 +7809,44 @@ CVE-2025-24054,6.5,0.58909,External control of file name or path in Windows NTLM
 CVE-2025-24085,10.0,0.17648,"A use after free issue was addressed with improved memory management. This issue is fixed in iOS 18.3 and iPadOS 18.3, iPadOS 17.7.6, macOS Sequoia 15.3, macOS Sonoma 14.7.5, macOS Ventura 13.7.5, tvOS 18.3, visionOS 2.3, watchOS 11.3. A malicious application may be able to elevate privileges. Apple is aware of a report that this issue may have been actively exploited against versions of iOS before iOS 17.2.",2025-01-27 22:15:14.990,CISA
 CVE-2025-24200,6.1,0.04371,"An authorization issue was addressed with improved state management. This issue is fixed in iOS 15.8.4 and iPadOS 15.8.4, iOS 16.7.11 and iPadOS 16.7.11, iOS 18.3.1 and iPadOS 18.3.1, iPadOS 17.7.5. A physical attack may disable USB Restricted Mode on a locked device. Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals.",2025-02-10 19:15:40.107,CISA
 CVE-2025-24201,10.0,0.04117,"An out-of-bounds write issue was addressed with improved checks to prevent unauthorized actions. This issue is fixed in Safari 18.3.1, iOS 15.8.4 and iPadOS 15.8.4, iOS 16.7.11 and iPadOS 16.7.11, iOS 18.3.2 and iPadOS 18.3.2, iPadOS 17.7.6, macOS Sequoia 15.3.2, visionOS 2.3.2, watchOS 11.4. Maliciously crafted web content may be able to break out of Web Content sandbox. This is a supplementary fix for an attack that was blocked in iOS 17.2. (Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 17.2.).",2025-03-11 18:15:30.190,CISA
+CVE-2025-24293,8.1,0.02388,"# Active Storage allowed transformation methods potentially unsafe
+
+Active Storage attempts to prevent the use of potentially unsafe image
+transformation methods and parameters by default.
+
+The default allowed list contains three methods allow for the circumvention
+of the safe defaults which enables potential command injection
+vulnerabilities in cases where arbitrary user supplied input is accepted as
+valid transformation methods or parameters.
+
+
+Impact
+------
+This vulnerability impacts applications that use Active Storage with the image_processing processing gem in addition to mini_magick as the image processor.
+
+Vulnerable code will look something similar to this:
+```
+<%= image_tag blob.variant(params[:t] => params[:v]) %>
+```
+
+Where the transformation method or its arguments are untrusted arbitrary input.
+
+All users running an affected release should either upgrade or use one of the workarounds immediately.
+
+
+
+Workarounds
+-----------
+Consuming user supplied input for image transformation methods or their parameters is unsupported behavior and should be considered dangerous.
+
+Strict validation of user supplied methods and parameters should be performed
+as well as having a strong [ImageMagick security
+policy](https://imagemagick.org/script/security-policy.php) deployed.
+
+Credits
+-------
+
+Thank you [lio346](https://hackerone.com/lio346) for reporting this!",2026-01-30 21:15:55.677,Metasploit
 CVE-2025-24354,5.3,0.00875,"imgproxy is server for resizing, processing, and converting images. Imgproxy does not block the 0.0.0.0 address, even with IMGPROXY_ALLOW_LOOPBACK_SOURCE_ADDRESSES set to false. This can expose services on the local host. This vulnerability is fixed in 3.27.2.",2025-01-27 18:15:41.197,Nuclei
 CVE-2025-24367,8.8,0.54024,"Cacti is an open source performance and fault management framework. An authenticated Cacti user can abuse graph creation and graph template functionality to create arbitrary PHP scripts in the web root of the application, leading to remote code execution on the server. This vulnerability is fixed in 1.2.29.",2025-01-27 18:15:42.003,Metasploit
 CVE-2025-24472,8.1,0.06969,"An Authentication Bypass Using an Alternate Path or Channel vulnerability [CWE-288] affecting FortiOS 7.0.0 through 7.0.16 and FortiProxy 7.2.0 through 7.2.12, 7.0.0 through 7.0.19 may allow a remote unauthenticated attacker with prior knowledge of upstream and downstream devices serial numbers to gain super-admin privileges on the downstream device, if the Security Fabric is enabled, via crafted CSF proxy requests.",2025-02-11 17:15:34.867,CISA
@@ -8573,6 +8611,7 @@ CVE-2026-12569,9.8,0.40586,"A critical remote code execution (RCE) vulnerability
   *  The identified vulnerability also impacts Windchill and FlexPLM releases prior to 11.0 M030",2026-06-18 01:18:12.040,CISA
 CVE-2026-1277,4.7,0.00592,"The URL Shortify plugin for WordPress is vulnerable to Open Redirect in all versions up to, and including, 1.12.1 due to insufficient validation on the 'redirect_to' parameter in the promotional dismissal handler. This makes it possible for unauthenticated attackers to redirect users to potentially malicious sites via a crafted link.",2026-02-18 05:16:24.960,Nuclei
 CVE-2026-1281,9.8,0.81518,A code injection in Ivanti Endpoint Manager Mobile allowing attackers to achieve unauthenticated remote code execution.,2026-01-29 22:15:53.140,CISA/Metasploit
+CVE-2026-12898,6.5,0.00461,"The All-in-One WP Migration and Backup WordPress plugin before 7.106 does not properly sanitise a user-supplied value before using it to build a file path, allowing unauthenticated attackers to create or append a log file in arbitrary locations outside its intended storage directory.",2026-07-20 07:16:35.087,Nuclei
 CVE-2026-1296,6.1,0.0046,"The Frontend Post Submission Manager Lite plugin for WordPress is vulnerable to Open Redirection in all versions up to, and including, 1.2.7 due to insufficient validation on the 'requested_page' POST parameter in the verify_username_password function. This makes it possible for unauthenticated attackers to redirect users to potentially malicious sites if they can successfully trick them into performing an action such as clicking on a link.",2026-02-18 05:16:25.490,Nuclei
 CVE-2026-13001,9.8,0.03757,"The Podlove Podcast Publisher plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the 'podlove_handle_cache_files' function in all versions up to, and including, 4.5.1. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected site's server which may make remote code execution possible.",2026-07-14 20:16:56.610,Nuclei
 CVE-2026-1306,9.8,0.04458,"The midi-Synth plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type and file extension validation in the 'export' AJAX action in all versions up to, and including, 1.1.0. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected site's server which may make remote code execution possible granted the attacker can obtain a valid nonce. The nonce is exposed in frontend JavaScript making it trivially accessible to unauthenticated attackers.",2026-02-14 07:16:10.150,Nuclei
@@ -9190,6 +9229,7 @@ CVE-2026-65400,9.8,0.10431,"An authentication issue was addressed with improved 
 CVE-2026-65442,7.2,0.00419,Unauthenticated Server Side Request Forgery (SSRF) in FormCraft <= 3.9.15 versions.,2026-07-27 23:16:42.207,Nuclei
 CVE-2026-65694,7.5,0.03394,"Microweber CMS through 2.0.20 contains a path traversal vulnerability in the static file controller that allows unauthenticated remote attackers to read arbitrary files by supplying directory traversal sequences in the path query parameter. Attackers can send a single unauthenticated HTTP GET request exploiting the failure of normalize_path() to strip traversal sequences, disclosing sensitive files such as environment configuration files containing credentials and system files.",2026-07-23 22:16:53.313,Nuclei
 CVE-2026-65919,7.5,0.01918,Meshery before 1.0.57 contains an unauthenticated arbitrary file read vulnerability in the /api/system/fileView and /api/system/fileDownload endpoints that pass user-supplied file parameters directly to os.Open without path validation. Attackers can supply absolute paths or traversal sequences in the file parameter to read arbitrary files from the host filesystem without authentication.,2026-07-23 18:17:02.290,Nuclei
+CVE-2026-66066,0.0,0.18952,"Action Pack is a framework for handling and responding to web requests. In versions prior to 7.2.3.2, 8.0.5.1 and 8.1.3.1, Active Storage does not disable libvips operations marked unsafe for untrusted content, allowing a crafted upload to invoke such an operation. Consuming applications are affected when configured to use libvips and accept image uploads from untrusted users. An unauthenticated attacker may exploit this behavior to read arbitrary files accessible to the Rails process, including environment variables and application secrets. Exposure of credentials such as secret_key_base or external-service tokens may enable remote code execution or lateral movement. This issue has been fixed in versions 7.2.3.2, 8.0.5.1 and 8.1.3.1.",2026-07-30 19:18:35.843,Metasploit
 CVE-2026-67208,9.8,0.05285,"Juggle through 1.6.0 contains a remote code execution vulnerability that allows unauthenticated remote attackers to execute arbitrary OS commands by connecting to the exposed H2 database web console using default shipped credentials. Attackers can access the unprotected /h2-console endpoint, authenticate with default credentials, and leverage the H2 CREATE ALIAS Runtime.exec() technique to execute arbitrary commands, resulting in root-level code execution when running the stock Docker image.",2026-07-30 20:18:14.323,Nuclei
 CVE-2026-6826,5.3,0.01461,"Concrete CMS 9.5.0 and below  is vulnerable to unauthenticated file usage disclosure via missing permission check in the usage controller.  Any unauthenticated visitor can request /ccm/system/dialogs/file/usage/{fID} with any file ID and receive a list of every page that references that file, including page IDs, handles, and full URLs. This includes pages that are otherwise restricted by permissions.The Concrete CMS security team gave this vulnerability a CVSS v.4.0 score of 6.9 with vector CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N. Thanks Eldudareeno for reporting.",2026-05-21 21:16:32.697,Metasploit/Nuclei
 CVE-2026-6854,7.5,0.01577,"The My Calendar – Accessible Event Manager plugin for WordPress is vulnerable to time-based blind SQL Injection via the 'mc_auth' parameter in all versions up to, and including, 3.7.8 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.",2026-07-08 12:17:21.137,Nuclei
@@ -9222,6 +9262,7 @@ CVE-2026-7473,5.8,0.01108,"On affected platforms running Arista EOS where a tunn
 
 
 This issue has been reported as being exploited in the wild.",2026-06-05 17:17:02.850,CISA
+CVE-2026-76904,9.8,0.00524,"GeoTools is an open source Java library that provides tools for geospatial data. Starting in version 30.5 and prior to versions 33.6, 34.5, and 33.6, an SQL Injection Vulnerability is present when executing OGC Filters with PostGIS DataStore implementation: `jsonArrayContains` function; Requires PostGIS 12 or greater with a String or JSON field. For PostGIS 12 and greater `jsonArrayContains(<column>, <pointer>, <value>)` function writes `<value>` into generated SQL without escaping. Patches are available in versions 33.6, 34.5, and 33.6. No known workaround is available. To limit scope of SQL Injection the PostGIS connection pool should be configured with limited rights.",2026-08-21 21:17:06.143,Nuclei
 CVE-2026-77647,9.8,0.00816,"SPIP before 4.4.20 allows unauthenticated remote attackers to execute arbitrary code, as exploited in the wild in August 2026. This is related to incorrect identification of <?php blocks, and var_export's mishandling of certain cases such as presence of a '<' character.",2026-08-20 23:16:28.647,Metasploit
 CVE-2026-7798,5.4,0.00695,"The FluentCRM – Email Newsletter, Automation, Email Marketing, Email Campaigns, Optins, Leads, and CRM Solution plugin for WordPress is vulnerable to Blind Server-Side Request Forgery in all versions up to, and including, 2.9.87 via the 'SubscribeURL' parameter. This makes it possible for unauthenticated attackers to make web requests to arbitrary locations originating from the web application and can be used to query and modify information from internal services. Exploitation requires that the SES bounce handling key ('_fc_bounce_key') has never been stored (i.e., the site is in its default/unconfigured state with respect to SES bounce handling) as visiting the bounce configuration page auto-generates and stores a random key that causes the authentication check to evaluate correctly and reject unauthenticated requests.",2026-05-22 09:16:32.587,Nuclei
 CVE-2026-8037,9.6,0.99571,OS Command Injection Remote Code Execution Vulnerability in API in Progress ADC Products allows an un-authenticated attacker to execute arbitrary commands on the LoadMaster appliance by exploiting unsanitized input in multiple command endpoints,2026-06-04 14:16:45.177,EPSS/CISA/Nuclei
