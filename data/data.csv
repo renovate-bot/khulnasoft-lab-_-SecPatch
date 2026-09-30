@@ -9229,6 +9229,56 @@ skb_has_shared_frag() is true.  This catches the splice-loopback vector
 and other externally-shared frag sources while preserving the
 zero-copy fast path for skbs whose frags are kernel-private (e.g. NIC
 page_pool RX, GRO).  The OOM/trace handling already in place is reused.",2026-05-11 08:16:16.077,Metasploit
+CVE-2026-43503,8.8,0.00182,"In the Linux kernel, the following vulnerability has been resolved:
+
+net: skbuff: propagate shared-frag marker through frag-transfer helpers
+
+Two frag-transfer helpers (__pskb_copy_fclone() and skb_shift()) fail
+to propagate the SKBFL_SHARED_FRAG bit in skb_shinfo()->flags when
+moving frags from source to destination.  __pskb_copy_fclone() defers
+the rest of the shinfo metadata to skb_copy_header() after copying
+frag descriptors, but that helper only carries over gso_{size,segs,
+type} and never touches skb_shinfo()->flags; skb_shift() moves frag
+descriptors directly and leaves flags untouched.  As a result, the
+destination skb keeps a reference to the same externally-owned or
+page-cache-backed pages while reporting skb_has_shared_frag() as
+false.
+
+The mismatch is harmful in any in-place writer that uses
+skb_has_shared_frag() to decide whether shared pages must be detoured
+through skb_cow_data().  ESP input is one such writer (esp4.c,
+esp6.c), and a single nft 'dup to <local>' rule -- or any other
+nf_dup_ipv4() / xt_TEE caller -- is enough to land a pskb_copy()'d
+skb in esp_input() with the marker stripped, letting an unprivileged
+user write into the page cache of a root-owned read-only file via
+authencesn-ESN stray writes.
+
+Set SKBFL_SHARED_FRAG on the destination whenever frag descriptors
+were actually moved from the source.  skb_copy() and skb_copy_expand()
+share skb_copy_header() too but linearize all paged data into freshly
+allocated head storage and emerge with nr_frags == 0, so
+skb_has_shared_frag() returns false on its own; they need no change.
+
+The same omission exists in skb_gro_receive() and skb_gro_receive_list().
+The former moves the incoming skb's frag descriptors into the
+accumulator's last sub-skb via two paths (a direct frag-move loop and
+the head_frag + memcpy path); the latter chains the incoming skb whole
+onto p's frag_list.  Downstream skb_segment() reads only
+skb_shinfo(p)->flags, and skb_segment_list() reuses each sub-skb's
+shinfo as the nskb -- both p and lp must carry the marker.
+
+The same omission also exists in tcp_clone_payload(), which builds an
+MTU probe skb by moving frag descriptors from skbs on sk_write_queue
+into a freshly allocated nskb.  The helper falls into the same family
+and warrants the same fix for consistency; no TCP TX-side in-place
+writer is currently known to reach a user page through this gap, but
+a future consumer depending on the marker would regress silently.
+
+The same omission exists in skb_segment(): the per-iteration flag
+merge takes only head_skb's flag, and the inner switch that rebinds
+frag_skb to list_skb on head_skb-frags exhaustion does not fold the
+new frag_skb's flag into nskb.  Fold frag_skb's flag at both sites
+so segments drawing frags from frag_list members carry the marker.",2026-05-23 12:17:02.547,Metasploit
 CVE-2026-44177,0.0,0.0177,"Kirby is an open-source content management system. In versions 5.3.0 and above but prior to 5.4.1, Kirby did not correctly validate the provided user ID, resulting in a path traversal vulnerability. Version 5.3.0 introduced a performance improvement to the Users collection that loaded user objects lazily when first needed. Users were queried by their ID, which was then used to locate the corresponding account directory under site/accounts. This affected the authentication API (accessible to unauthenticated requests), the users API (accessible only to authenticated users), and any other place that uses $users->find() to look up an individual user by a request-provided email or ID. As a result, an attacker could trigger arbitrary PHP file inclusion of files named  index.php (for example, the main PHP files of plugins), the impact of which depends on the logic those files contain. It also allowed probing for the existence of arbitrary directories on the server, letting attackers fingerprint the server and site setup, including installed plugins and the content structure. This issue has been fixed in version 5.4.1.",2026-07-16 22:17:02.103,Nuclei
 CVE-2026-44262,9.4,0.03872,"Scramble generates API documentation for Laravel project. From 0.13.2 to before 0.13.22, when documentation endpoints are publicly accessible and validation rules reference user-controlled input, request supplied data may be evaluated during documentation generation, leading to execution of arbitrary PHP code in the application context. This vulnerability is fixed in 0.13.22.",2026-05-12 22:16:36.563,Nuclei
 CVE-2026-44338,7.3,0.00823,"PraisonAI is a multi-agent teams system. From version 2.5.6 to before version 4.6.34, PraisonAI ships a legacy Flask API server with authentication disabled by default. When that server is used, any caller that can reach it can access /agents and trigger the configured agents.yaml workflow through /chat without providing a token. This issue has been patched in version 4.6.34.",2026-05-08 14:16:46.733,Nuclei
